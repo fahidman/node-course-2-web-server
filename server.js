@@ -15,10 +15,10 @@ app.use((req,res,next)=>{
   })
   next();
 })
-app.use((req,res,next)=>{
-  res.render('maintain.hbs');
-
-})
+// app.use((req,res,next)=>{
+//   res.render('maintain.hbs');
+//
+// })
 app.use(express.static(__dirname+'/public'))
 hbs.registerHelper('getCurrentYear',()=> 2016)
 hbs.registerHelper('screamIt',(text)=> text.toUpperCase())
@@ -39,7 +39,12 @@ app.get('/about',(req,res)=>{
 
   })
 })
-
+app.get('/profile',(req,res)=>{
+  res.render('profile.hbs',{
+    pageTitle: 'Portfolio',
+      welcomeMessage: "Welcome to my site"
+  })
+})
 app.get('/bad',(req,res)=>{
   res.send({
     error_code: 404,
