@@ -42,7 +42,7 @@ app.get('/about',(req,res)=>{
 app.get('/profile',(req,res)=>{
   res.render('profile.hbs',{
     pageTitle: 'Portfolio',
-      welcomeMessage: "Welcome to my site"
+      welcomeMessage: "Welcome to my "
   })
 })
 app.get('/bad',(req,res)=>{
