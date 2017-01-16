@@ -5,7 +5,7 @@ var app = express();
 hbs.registerPartials(__dirname+'/views/partials')
 app.set('view engine','hbs');
 
-
+const port = process.env.PORT || 9000;
 app.use((req,res,next)=>{
   var now = new Date().toString();
   var log=(`${now}:== ${req.method}=== ${req.url}`)
@@ -55,6 +55,6 @@ app.get('/',(req,res)=>{
 
   })
 })
-app.listen(9000,()=>{
-  console.log("Server is started at 3001")
+app.listen(port,()=>{
+  console.log("Server is started at",port )
 })
